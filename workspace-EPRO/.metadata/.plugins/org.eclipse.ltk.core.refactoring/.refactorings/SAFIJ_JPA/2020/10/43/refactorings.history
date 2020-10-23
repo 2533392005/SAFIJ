@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;SAFIJ_JPA&apos;&#x0A;- Original project: &apos;SAFIJ_JPA&apos;&#x0A;- Original element: &apos;SAFIJ_JPA/src/org.persistence&apos;" description="Delete element" element1="/src&lt;org.persistence" element2="/src&lt;org" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1603418008954" subPackages="false" version="1.0"/>
+</session>

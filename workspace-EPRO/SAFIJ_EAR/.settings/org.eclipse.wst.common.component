@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SAFIJ_EAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="SAFIJ_JPA.jar" deploy-path="/lib" handle="module:/resource/SAFIJ_JPA/SAFIJ_JPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SAFIJ_EJB.jar" deploy-path="/" handle="module:/resource/SAFIJ_EJB/SAFIJ_EJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SAFIJ_WEB.war" deploy-path="/" handle="module:/resource/SAFIJ_WEB/SAFIJ_WEB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

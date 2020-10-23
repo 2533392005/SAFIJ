@@ -1,0 +1,30 @@
+package com.utec.epro.controllers;
+
+package com.utec.epro.controllers;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import com.utec.epro.clients.EnrolamientoUsuariosFacadeLocal;
+import com.utec.epro.entities.EnrolamientoUsuarios;
+
+@SuppressWarnings("deprecation")
+@ViewScoped
+@ManagedBean(name = "LoginController")
+public class LoginController implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private EnrolamientoUsuarios actualBienes = new Bienes(); 
+	public Bienes bienes;
+	private List<Bienes> bienesListAll = new ArrayList<Bienes>();
+	@EJB
+	private BienesFacadeLocal bienesFacadeLocal;	
+	
+
+	
+}

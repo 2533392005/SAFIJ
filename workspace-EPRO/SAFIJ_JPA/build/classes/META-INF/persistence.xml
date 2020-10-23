@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="SAFIJ_JPA">
+		<class>com.utec.epro.entities.Bienes</class>
+		<class>com.utec.epro.entities.CatalogoAgencias</class>
+		<class>com.utec.epro.entities.CatalogoTiempo</class>
+		<class>com.utec.epro.entities.CatalogoTipoActivo</class>
+		<class>com.utec.epro.entities.Ciudad</class>
+		<class>com.utec.epro.entities.Civil</class>
+		<class>com.utec.epro.entities.Departamento</class>
+		<class>com.utec.epro.entities.Depreciacion</class>
+		<class>com.utec.epro.entities.EnrolamientoAcceso</class>
+		<class>com.utec.epro.entities.EnrolamientoRoles</class>
+		<class>com.utec.epro.entities.EnrolamientoUsuarios</class>
+		<class>com.utec.epro.entities.Estados</class>
+		<class>com.utec.epro.entities.Genero</class>
+		<class>com.utec.epro.entities.Idioma</class>
+		<class>com.utec.epro.entities.Inventario</class>
+		<class>com.utec.epro.entities.Mantenimientos</class>
+		<class>com.utec.epro.entities.Municipio</class>
+		<class>com.utec.epro.entities.Pais</class>
+		<class>com.utec.epro.entities.Parentesco</class>
+		<class>com.utec.epro.entities.Periodos</class>
+		<class>com.utec.epro.entities.PersonalContactos</class>
+		<class>com.utec.epro.entities.PersonalExperienciaLaboral</class>
+		<class>com.utec.epro.entities.PersonalHabilidades</class>
+		<class>com.utec.epro.entities.PersonalPersona</class>
+		<class>com.utec.epro.entities.PersonalProfesion</class>
+		<class>com.utec.epro.entities.Transaccion</class>
+	</persistence-unit>
+</persistence>
