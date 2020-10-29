@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/root/workspace-EPRO/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-2891193119.index
-3385530391.index
-477451665.index
-28993753.index
-3386851663.index
-133701438.index

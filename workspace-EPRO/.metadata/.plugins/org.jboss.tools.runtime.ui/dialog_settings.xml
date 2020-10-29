@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<item key="defaultDestinationPath" value="/usr/local/tmp"/>
-	<item key="defaultDialogPath" value="/usr/local/"/>
-	<item key="deleteOnExit" value="true"/>
-	<section name="downloadRuntimeSection">
-	</section>
-</section>

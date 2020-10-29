@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-/root/workspace-EPRO/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2865183373.index
-/SAFIJ_WEB/src
-/root/workspace-EPRO/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1732173918.index
-/SAFIJ_WEB_OLD/src
