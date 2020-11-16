@@ -20,11 +20,10 @@ public class Municipio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="municipio_id", unique=true, nullable=false)
-	private int municipioId;
+	@Column(name="municipio_id")
+	private String municipioId;
 
-	@Column(name="municipio_estado", nullable=false)
+	@Column(name="municipio_estado")
 	private int municipioEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Municipio implements Serializable {
 	@Column(name="municipio_fecha_modifica")
 	private Date municipioFechaModifica;
 
-	@Column(name="municipio_nombre", length=100)
+	@Column(name="municipio_nombre")
 	private String municipioNombre;
 
 	@Column(name="municipio_usuario_crea")
-	private int municipioUsuarioCrea;
+	private String municipioUsuarioCrea;
 
 	@Column(name="municipio_usuario_modifica")
-	private int municipioUsuarioModifica;
+	private String municipioUsuarioModifica;
 
 	//bi-directional many-to-one association to CatalogoAgencias
 	@OneToMany(mappedBy="municipio")
@@ -64,11 +63,11 @@ public class Municipio implements Serializable {
 	public Municipio() {
 	}
 
-	public int getMunicipioId() {
+	public String getMunicipioId() {
 		return this.municipioId;
 	}
 
-	public void setMunicipioId(int municipioId) {
+	public void setMunicipioId(String municipioId) {
 		this.municipioId = municipioId;
 	}
 
@@ -104,19 +103,19 @@ public class Municipio implements Serializable {
 		this.municipioNombre = municipioNombre;
 	}
 
-	public int getMunicipioUsuarioCrea() {
+	public String getMunicipioUsuarioCrea() {
 		return this.municipioUsuarioCrea;
 	}
 
-	public void setMunicipioUsuarioCrea(int municipioUsuarioCrea) {
+	public void setMunicipioUsuarioCrea(String municipioUsuarioCrea) {
 		this.municipioUsuarioCrea = municipioUsuarioCrea;
 	}
 
-	public int getMunicipioUsuarioModifica() {
+	public String getMunicipioUsuarioModifica() {
 		return this.municipioUsuarioModifica;
 	}
 
-	public void setMunicipioUsuarioModifica(int municipioUsuarioModifica) {
+	public void setMunicipioUsuarioModifica(String municipioUsuarioModifica) {
 		this.municipioUsuarioModifica = municipioUsuarioModifica;
 	}
 

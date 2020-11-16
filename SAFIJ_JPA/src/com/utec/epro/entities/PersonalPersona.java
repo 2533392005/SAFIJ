@@ -20,26 +20,25 @@ public class PersonalPersona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="persona_id", unique=true, nullable=false)
-	private int personaId;
+	@Column(name="persona_id")
+	private String personaId;
 
-	@Column(name="persona_apellido1", length=100)
+	@Column(name="persona_apellido1")
 	private String personaApellido1;
 
-	@Column(name="persona_apellido2", length=100)
+	@Column(name="persona_apellido2")
 	private String personaApellido2;
 
-	@Column(name="persona_apellido3", length=100)
+	@Column(name="persona_apellido3")
 	private String personaApellido3;
 
-	@Column(name="persona_direccion", length=300)
+	@Column(name="persona_direccion")
 	private String personaDireccion;
 
-	@Column(name="persona_dui", length=100)
+	@Column(name="persona_dui")
 	private String personaDui;
 
-	@Column(name="persona_estado", nullable=false)
+	@Column(name="persona_estado")
 	private int personaEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -50,36 +49,36 @@ public class PersonalPersona implements Serializable {
 	@Column(name="persona_fecha_modifica")
 	private Date personaFechaModifica;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="persona_fecha_nac")
 	private Date personaFechaNac;
 
-	@Column(name="persona_nit", length=100)
+	@Column(name="persona_nit")
 	private String personaNit;
 
-	@Column(name="persona_nombre1", length=100)
+	@Column(name="persona_nombre1")
 	private String personaNombre1;
 
-	@Column(name="persona_nombre2", length=100)
+	@Column(name="persona_nombre2")
 	private String personaNombre2;
 
-	@Column(name="persona_observaciones", length=300)
+	@Column(name="persona_observaciones")
 	private String personaObservaciones;
 
-	@Column(name="persona_telefono_fijo", length=100)
+	@Column(name="persona_telefono_fijo")
 	private String personaTelefonoFijo;
 
-	@Column(name="persona_telefono_movil", length=100)
+	@Column(name="persona_telefono_movil")
 	private String personaTelefonoMovil;
 
-	@Column(name="persona_tipo", nullable=false)
-	private int personaTipo;
+	@Column(name="persona_tipo")
+	private String personaTipo;
 
 	@Column(name="persona_usuario_crea")
-	private int personaUsuarioCrea;
+	private String personaUsuarioCrea;
 
 	@Column(name="persona_usuario_modifica")
-	private int personaUsuarioModifica;
+	private String personaUsuarioModifica;
 
 	//bi-directional many-to-one association to EnrolamientoUsuarios
 	@OneToMany(mappedBy="personalPersona")
@@ -120,11 +119,11 @@ public class PersonalPersona implements Serializable {
 	public PersonalPersona() {
 	}
 
-	public int getPersonaId() {
+	public String getPersonaId() {
 		return this.personaId;
 	}
 
-	public void setPersonaId(int personaId) {
+	public void setPersonaId(String personaId) {
 		this.personaId = personaId;
 	}
 
@@ -248,27 +247,27 @@ public class PersonalPersona implements Serializable {
 		this.personaTelefonoMovil = personaTelefonoMovil;
 	}
 
-	public int getPersonaTipo() {
+	public String getPersonaTipo() {
 		return this.personaTipo;
 	}
 
-	public void setPersonaTipo(int personaTipo) {
+	public void setPersonaTipo(String personaTipo) {
 		this.personaTipo = personaTipo;
 	}
 
-	public int getPersonaUsuarioCrea() {
+	public String getPersonaUsuarioCrea() {
 		return this.personaUsuarioCrea;
 	}
 
-	public void setPersonaUsuarioCrea(int personaUsuarioCrea) {
+	public void setPersonaUsuarioCrea(String personaUsuarioCrea) {
 		this.personaUsuarioCrea = personaUsuarioCrea;
 	}
 
-	public int getPersonaUsuarioModifica() {
+	public String getPersonaUsuarioModifica() {
 		return this.personaUsuarioModifica;
 	}
 
-	public void setPersonaUsuarioModifica(int personaUsuarioModifica) {
+	public void setPersonaUsuarioModifica(String personaUsuarioModifica) {
 		this.personaUsuarioModifica = personaUsuarioModifica;
 	}
 

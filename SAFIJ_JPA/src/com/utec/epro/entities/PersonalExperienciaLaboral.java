@@ -19,33 +19,32 @@ public class PersonalExperienciaLaboral implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="experiencia_laboral_id", unique=true, nullable=false)
-	private int experienciaLaboralId;
+	@Column(name="experiencia_laboral_id")
+	private String experienciaLaboralId;
 
 	@Column(name="experiencia_laboral_anio")
 	private int experienciaLaboralAnio;
 
-	@Column(name="experiencia_laboral_cargo", length=100)
+	@Column(name="experiencia_laboral_cargo")
 	private String experienciaLaboralCargo;
 
-	@Column(name="experiencia_laboral_comentarios", length=500)
+	@Column(name="experiencia_laboral_comentarios")
 	private String experienciaLaboralComentarios;
 
-	@Column(name="experiencia_laboral_contacto", length=100)
+	@Column(name="experiencia_laboral_contacto")
 	private String experienciaLaboralContacto;
 
-	@Column(name="experiencia_laboral_empresa", length=100)
+	@Column(name="experiencia_laboral_empresa")
 	private String experienciaLaboralEmpresa;
 
-	@Column(name="experiencia_laboral_estado", nullable=false)
+	@Column(name="experiencia_laboral_estado")
 	private int experienciaLaboralEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="experiencia_laboral_fecha_crea")
 	private Date experienciaLaboralFechaCrea;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="experiencia_laboral_fecha_desde")
 	private Date experienciaLaboralFechaDesde;
 
@@ -53,14 +52,14 @@ public class PersonalExperienciaLaboral implements Serializable {
 	@Column(name="experiencia_laboral_fecha_modifica")
 	private Date experienciaLaboralFechaModifica;
 
-	@Column(name="experiencia_laboral_telefono", length=100)
+	@Column(name="experiencia_laboral_telefono")
 	private String experienciaLaboralTelefono;
 
 	@Column(name="experiencia_laboral_usuario_crea")
-	private int experienciaLaboralUsuarioCrea;
+	private String experienciaLaboralUsuarioCrea;
 
 	@Column(name="experiencia_laboral_usuario_modifica")
-	private int experienciaLaboralUsuarioModifica;
+	private String experienciaLaboralUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@ManyToOne
@@ -70,11 +69,11 @@ public class PersonalExperienciaLaboral implements Serializable {
 	public PersonalExperienciaLaboral() {
 	}
 
-	public int getExperienciaLaboralId() {
+	public String getExperienciaLaboralId() {
 		return this.experienciaLaboralId;
 	}
 
-	public void setExperienciaLaboralId(int experienciaLaboralId) {
+	public void setExperienciaLaboralId(String experienciaLaboralId) {
 		this.experienciaLaboralId = experienciaLaboralId;
 	}
 
@@ -158,19 +157,19 @@ public class PersonalExperienciaLaboral implements Serializable {
 		this.experienciaLaboralTelefono = experienciaLaboralTelefono;
 	}
 
-	public int getExperienciaLaboralUsuarioCrea() {
+	public String getExperienciaLaboralUsuarioCrea() {
 		return this.experienciaLaboralUsuarioCrea;
 	}
 
-	public void setExperienciaLaboralUsuarioCrea(int experienciaLaboralUsuarioCrea) {
+	public void setExperienciaLaboralUsuarioCrea(String experienciaLaboralUsuarioCrea) {
 		this.experienciaLaboralUsuarioCrea = experienciaLaboralUsuarioCrea;
 	}
 
-	public int getExperienciaLaboralUsuarioModifica() {
+	public String getExperienciaLaboralUsuarioModifica() {
 		return this.experienciaLaboralUsuarioModifica;
 	}
 
-	public void setExperienciaLaboralUsuarioModifica(int experienciaLaboralUsuarioModifica) {
+	public void setExperienciaLaboralUsuarioModifica(String experienciaLaboralUsuarioModifica) {
 		this.experienciaLaboralUsuarioModifica = experienciaLaboralUsuarioModifica;
 	}
 

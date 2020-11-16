@@ -20,11 +20,10 @@ public class CatalogoAgencias implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="agencias_id", unique=true, nullable=false)
-	private int agenciasId;
+	@Column(name="agencias_id")
+	private String agenciasId;
 
-	@Column(name="agencia_estado", nullable=false)
+	@Column(name="agencia_estado")
 	private int agenciaEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,22 +34,22 @@ public class CatalogoAgencias implements Serializable {
 	@Column(name="agencia_fecha_modi")
 	private Date agenciaFechaModi;
 
-	@Column(name="agencia_id_usuario_crea", length=10)
+	@Column(name="agencia_id_usuario_crea")
 	private String agenciaIdUsuarioCrea;
 
-	@Column(name="agencia_id_usuario_modi", length=10)
+	@Column(name="agencia_id_usuario_modi")
 	private String agenciaIdUsuarioModi;
 
 	@Column(name="agencia_usuario_id")
-	private int agenciaUsuarioId;
+	private String agenciaUsuarioId;
 
-	@Column(name="agencias_descripcion", length=200)
+	@Column(name="agencias_descripcion")
 	private String agenciasDescripcion;
 
-	@Column(name="agencias_direccion", length=200)
+	@Column(name="agencias_direccion")
 	private String agenciasDireccion;
 
-	@Column(name="agencias_nombre", nullable=false, length=100)
+	@Column(name="agencias_nombre")
 	private String agenciasNombre;
 
 	//bi-directional many-to-one association to Ciudad
@@ -80,11 +79,11 @@ public class CatalogoAgencias implements Serializable {
 	public CatalogoAgencias() {
 	}
 
-	public int getAgenciasId() {
+	public String getAgenciasId() {
 		return this.agenciasId;
 	}
 
-	public void setAgenciasId(int agenciasId) {
+	public void setAgenciasId(String agenciasId) {
 		this.agenciasId = agenciasId;
 	}
 
@@ -128,11 +127,11 @@ public class CatalogoAgencias implements Serializable {
 		this.agenciaIdUsuarioModi = agenciaIdUsuarioModi;
 	}
 
-	public int getAgenciaUsuarioId() {
+	public String getAgenciaUsuarioId() {
 		return this.agenciaUsuarioId;
 	}
 
-	public void setAgenciaUsuarioId(int agenciaUsuarioId) {
+	public void setAgenciaUsuarioId(String agenciaUsuarioId) {
 		this.agenciaUsuarioId = agenciaUsuarioId;
 	}
 

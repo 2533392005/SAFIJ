@@ -20,14 +20,13 @@ public class Periodos implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="periodos_id", unique=true, nullable=false)
-	private int periodosId;
+	@Column(name="periodos_id")
+	private String periodosId;
 
-	@Column(name="periodos_descripcion", nullable=false, length=100)
+	@Column(name="periodos_descripcion")
 	private String periodosDescripcion;
 
-	@Column(name="periodos_estado", nullable=false)
+	@Column(name="periodos_estado")
 	private int periodosEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -46,13 +45,13 @@ public class Periodos implements Serializable {
 	@Column(name="periodos_fecha_modi")
 	private Date periodosFechaModi;
 
-	@Column(name="periodos_id_usuario_crea", length=10)
+	@Column(name="periodos_id_usuario_crea")
 	private String periodosIdUsuarioCrea;
 
-	@Column(name="periodos_id_usuario_modi", length=10)
+	@Column(name="periodos_id_usuario_modi")
 	private String periodosIdUsuarioModi;
 
-	@Column(name="periodos_nombre", nullable=false, length=100)
+	@Column(name="periodos_nombre")
 	private String periodosNombre;
 
 	//bi-directional many-to-one association to Depreciacion
@@ -66,11 +65,11 @@ public class Periodos implements Serializable {
 	public Periodos() {
 	}
 
-	public int getPeriodosId() {
+	public String getPeriodosId() {
 		return this.periodosId;
 	}
 
-	public void setPeriodosId(int periodosId) {
+	public void setPeriodosId(String periodosId) {
 		this.periodosId = periodosId;
 	}
 

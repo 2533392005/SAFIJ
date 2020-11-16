@@ -19,14 +19,13 @@ public class EnrolamientoUsuarios implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="usuario_id", unique=true, nullable=false)
-	private int usuarioId;
+	@Column(name="usuario_id")
+	private String usuarioId;
 
-	@Column(name="usuarios_descripcion", length=200)
+	@Column(name="usuarios_descripcion")
 	private String usuariosDescripcion;
 
-	@Column(name="usuarios_estado", nullable=false)
+	@Column(name="usuarios_estado")
 	private int usuariosEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -37,19 +36,19 @@ public class EnrolamientoUsuarios implements Serializable {
 	@Column(name="usuarios_fecha_modi")
 	private Date usuariosFechaModi;
 
-	@Column(name="usuarios_id_usuario_crea", length=10)
+	@Column(name="usuarios_id_usuario_crea")
 	private String usuariosIdUsuarioCrea;
 
-	@Column(name="usuarios_id_usuario_modi", length=10)
+	@Column(name="usuarios_id_usuario_modi")
 	private String usuariosIdUsuarioModi;
 
 	@Column(name="usuarios_tipo")
 	private int usuariosTipo;
 
-	//bi-directional many-to-one association to EnrolamientoAcceso
+	//bi-directional many-to-one association to EnrolamientoAccesos
 	@ManyToOne
 	@JoinColumn(name="accesos_id")
-	private EnrolamientoAcceso enrolamientoAcceso;
+	private EnrolamientoAccesos enrolamientoAcceso;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@ManyToOne
@@ -64,11 +63,11 @@ public class EnrolamientoUsuarios implements Serializable {
 	public EnrolamientoUsuarios() {
 	}
 
-	public int getUsuarioId() {
+	public String getUsuarioId() {
 		return this.usuarioId;
 	}
 
-	public void setUsuarioId(int usuarioId) {
+	public void setUsuarioId(String usuarioId) {
 		this.usuarioId = usuarioId;
 	}
 
@@ -128,11 +127,11 @@ public class EnrolamientoUsuarios implements Serializable {
 		this.usuariosTipo = usuariosTipo;
 	}
 
-	public EnrolamientoAcceso getEnrolamientoAcceso() {
+	public EnrolamientoAccesos getEnrolamientoAcceso() {
 		return this.enrolamientoAcceso;
 	}
 
-	public void setEnrolamientoAcceso(EnrolamientoAcceso enrolamientoAcceso) {
+	public void setEnrolamientoAcceso(EnrolamientoAccesos enrolamientoAcceso) {
 		this.enrolamientoAcceso = enrolamientoAcceso;
 	}
 

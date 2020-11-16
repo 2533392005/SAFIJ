@@ -19,14 +19,13 @@ public class Estados implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="estado_id", unique=true, nullable=false)
+	@Column(name="estado_id")
 	private int estadoId;
 
-	@Column(name="descripcion_estado", length=100)
+	@Column(name="descripcion_estado")
 	private String descripcionEstado;
 
-	@Column(name="estados_estado", nullable=false)
+	@Column(name="estados_estado")
 	private int estadosEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -37,13 +36,13 @@ public class Estados implements Serializable {
 	@Column(name="estados_fecha_modi")
 	private Date estadosFechaModi;
 
-	@Column(name="estados_id_usuario_crea", length=10)
+	@Column(name="estados_id_usuario_crea")
 	private String estadosIdUsuarioCrea;
 
-	@Column(name="estados_id_usuario_modi", length=10)
+	@Column(name="estados_id_usuario_modi")
 	private String estadosIdUsuarioModi;
 
-	@Column(name="nombre_estado", length=50)
+	@Column(name="nombre_estado")
 	private String nombreEstado;
 
 	public Estados() {

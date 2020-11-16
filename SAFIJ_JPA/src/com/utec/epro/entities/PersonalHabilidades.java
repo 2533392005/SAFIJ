@@ -15,19 +15,18 @@ import java.util.Date;
 @NamedQueries({
 	@NamedQuery(name="PersonalHabilidades.findAll", query="SELECT p FROM PersonalHabilidades p"),
 	@NamedQuery(name="PersonalHabilidades.findByHabilidadesId", query="SELECT p FROM PersonalHabilidades p where p.habilidadesId = :habilidadesId")
-})
+})	
 public class PersonalHabilidades implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="habilidades_id", unique=true, nullable=false)
-	private int habilidadesId;
+	@Column(name="habilidades_id")
+	private String habilidadesId;
 
-	@Column(name="habilidades_descripcion", length=500)
+	@Column(name="habilidades_descripcion")
 	private String habilidadesDescripcion;
 
-	@Column(name="habilidades_estado", nullable=false)
+	@Column(name="habilidades_estado")
 	private int habilidadesEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -38,14 +37,14 @@ public class PersonalHabilidades implements Serializable {
 	@Column(name="habilidades_fecha_modifica")
 	private Date habilidadesFechaModifica;
 
-	@Column(name="habilidades_porcentaje", precision=10, scale=2)
+	@Column(name="habilidades_porcentaje")
 	private BigDecimal habilidadesPorcentaje;
 
 	@Column(name="habilidades_usuario_crea")
-	private int habilidadesUsuarioCrea;
+	private String habilidadesUsuarioCrea;
 
 	@Column(name="habilidades_usuario_modifica")
-	private int habilidadesUsuarioModifica;
+	private String habilidadesUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@ManyToOne
@@ -55,11 +54,11 @@ public class PersonalHabilidades implements Serializable {
 	public PersonalHabilidades() {
 	}
 
-	public int getHabilidadesId() {
+	public String getHabilidadesId() {
 		return this.habilidadesId;
 	}
 
-	public void setHabilidadesId(int habilidadesId) {
+	public void setHabilidadesId(String habilidadesId) {
 		this.habilidadesId = habilidadesId;
 	}
 
@@ -103,19 +102,19 @@ public class PersonalHabilidades implements Serializable {
 		this.habilidadesPorcentaje = habilidadesPorcentaje;
 	}
 
-	public int getHabilidadesUsuarioCrea() {
+	public String getHabilidadesUsuarioCrea() {
 		return this.habilidadesUsuarioCrea;
 	}
 
-	public void setHabilidadesUsuarioCrea(int habilidadesUsuarioCrea) {
+	public void setHabilidadesUsuarioCrea(String habilidadesUsuarioCrea) {
 		this.habilidadesUsuarioCrea = habilidadesUsuarioCrea;
 	}
 
-	public int getHabilidadesUsuarioModifica() {
+	public String getHabilidadesUsuarioModifica() {
 		return this.habilidadesUsuarioModifica;
 	}
 
-	public void setHabilidadesUsuarioModifica(int habilidadesUsuarioModifica) {
+	public void setHabilidadesUsuarioModifica(String habilidadesUsuarioModifica) {
 		this.habilidadesUsuarioModifica = habilidadesUsuarioModifica;
 	}
 

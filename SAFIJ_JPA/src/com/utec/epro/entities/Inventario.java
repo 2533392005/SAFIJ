@@ -20,17 +20,16 @@ public class Inventario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="inventario_id", unique=true, nullable=false)
-	private int inventarioId;
+	@Column(name="inventario_id")
+	private String inventarioId;
 
-	@Column(name="bienes_id", nullable=false)
-	private int bienesId;
+	@Column(name="bienes_id")
+	private String bienesId;
 
-	@Column(name="inventario_estado", nullable=false)
+	@Column(name="inventario_estado")
 	private int inventarioEstado;
 
-	@Column(name="inventario_estado_inventario", nullable=false)
+	@Column(name="inventario_estado_inventario")
 	private int inventarioEstadoInventario;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -41,10 +40,10 @@ public class Inventario implements Serializable {
 	@Column(name="inventario_fecha_modi")
 	private Date inventarioFechaModi;
 
-	@Column(name="inventario_id_usuario_crea", length=10)
+	@Column(name="inventario_id_usuario_crea")
 	private String inventarioIdUsuarioCrea;
 
-	@Column(name="inventario_id_usuario_modi", length=10)
+	@Column(name="inventario_id_usuario_modi")
 	private String inventarioIdUsuarioModi;
 
 	//bi-directional many-to-one association to Depreciacion
@@ -53,7 +52,7 @@ public class Inventario implements Serializable {
 
 	//bi-directional many-to-one association to CatalogoAgencias
 	@ManyToOne
-	@JoinColumn(name="inventario_agencia_id", nullable=false)
+	@JoinColumn(name="inventario_agencia_id")
 	private CatalogoAgencias catalogoAgencia;
 
 	//bi-directional many-to-one association to Mantenimientos
@@ -63,19 +62,19 @@ public class Inventario implements Serializable {
 	public Inventario() {
 	}
 
-	public int getInventarioId() {
+	public String getInventarioId() {
 		return this.inventarioId;
 	}
 
-	public void setInventarioId(int inventarioId) {
+	public void setInventarioId(String inventarioId) {
 		this.inventarioId = inventarioId;
 	}
 
-	public int getBienesId() {
+	public String getBienesId() {
 		return this.bienesId;
 	}
 
-	public void setBienesId(int bienesId) {
+	public void setBienesId(String bienesId) {
 		this.bienesId = bienesId;
 	}
 

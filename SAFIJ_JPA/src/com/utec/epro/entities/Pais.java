@@ -20,11 +20,10 @@ public class Pais implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="pais_id", unique=true, nullable=false)
-	private int paisId;
+	@Column(name="pais_id")
+	private String paisId;
 
-	@Column(name="pais_estado", nullable=false)
+	@Column(name="pais_estado")
 	private int paisEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,17 +34,17 @@ public class Pais implements Serializable {
 	@Column(name="pais_fecha_modifica")
 	private Date paisFechaModifica;
 
-	@Column(name="pais_nacionalidad", length=100)
+	@Column(name="pais_nacionalidad")
 	private String paisNacionalidad;
 
-	@Column(name="pais_nombre", length=100)
+	@Column(name="pais_nombre")
 	private String paisNombre;
 
 	@Column(name="pais_usuario_crea")
-	private int paisUsuarioCrea;
+	private String paisUsuarioCrea;
 
 	@Column(name="pais_usuario_modifica")
-	private int paisUsuarioModifica;
+	private String paisUsuarioModifica;
 
 	//bi-directional many-to-one association to CatalogoAgencias
 	@OneToMany(mappedBy="pai")
@@ -58,11 +57,11 @@ public class Pais implements Serializable {
 	public Pais() {
 	}
 
-	public int getPaisId() {
+	public String getPaisId() {
 		return this.paisId;
 	}
 
-	public void setPaisId(int paisId) {
+	public void setPaisId(String paisId) {
 		this.paisId = paisId;
 	}
 
@@ -106,19 +105,19 @@ public class Pais implements Serializable {
 		this.paisNombre = paisNombre;
 	}
 
-	public int getPaisUsuarioCrea() {
+	public String getPaisUsuarioCrea() {
 		return this.paisUsuarioCrea;
 	}
 
-	public void setPaisUsuarioCrea(int paisUsuarioCrea) {
+	public void setPaisUsuarioCrea(String paisUsuarioCrea) {
 		this.paisUsuarioCrea = paisUsuarioCrea;
 	}
 
-	public int getPaisUsuarioModifica() {
+	public String getPaisUsuarioModifica() {
 		return this.paisUsuarioModifica;
 	}
 
-	public void setPaisUsuarioModifica(int paisUsuarioModifica) {
+	public void setPaisUsuarioModifica(String paisUsuarioModifica) {
 		this.paisUsuarioModifica = paisUsuarioModifica;
 	}
 

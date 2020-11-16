@@ -19,14 +19,13 @@ public class CatalogoTiempo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="tiempo_id", unique=true, nullable=false)
-	private int tiempoId;
+	@Column(name="tiempo_id")
+	private String tiempoId;
 
-	@Column(name="tiempo_descripcion", length=100)
+	@Column(name="tiempo_descripcion")
 	private String tiempoDescripcion;
 
-	@Column(name="tiempo_estado", nullable=false)
+	@Column(name="tiempo_estado")
 	private int tiempoEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -37,26 +36,26 @@ public class CatalogoTiempo implements Serializable {
 	@Column(name="tiempo_fecha_modi")
 	private Date tiempoFechaModi;
 
-	@Column(name="tiempo_id_usuario_crea", length=10)
+	@Column(name="tiempo_id_usuario_crea")
 	private String tiempoIdUsuarioCrea;
 
-	@Column(name="tiempo_id_usuario_modi", length=10)
+	@Column(name="tiempo_id_usuario_modi")
 	private String tiempoIdUsuarioModi;
 
-	@Column(name="tiempo_magnitud", length=100)
+	@Column(name="tiempo_magnitud")
 	private String tiempoMagnitud;
 
-	@Column(name="tiempo_nombre", nullable=false, length=100)
+	@Column(name="tiempo_nombre")
 	private String tiempoNombre;
 
 	public CatalogoTiempo() {
 	}
 
-	public int getTiempoId() {
+	public String getTiempoId() {
 		return this.tiempoId;
 	}
 
-	public void setTiempoId(int tiempoId) {
+	public void setTiempoId(String tiempoId) {
 		this.tiempoId = tiempoId;
 	}
 

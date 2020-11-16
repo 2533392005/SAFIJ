@@ -15,14 +15,13 @@ import java.util.List;
 @NamedQueries({
 	@NamedQuery(name="CatalogoTipoActivo.findAll", query="SELECT c FROM CatalogoTipoActivo c"),
 	@NamedQuery(name="CatalogoTipoActivo.findByTipoActivoId", query="SELECT c FROM CatalogoTipoActivo c where c.tipoActivoId = :tipoActivoId")
-})
+})	
 public class CatalogoTipoActivo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="tipo_activo_id", unique=true, nullable=false)
-	private int tipoActivoId;
+	@Column(name="tipo_activo_id")
+	private String tipoActivoId;
 
 	@Column(name="tipo_activo_cantidad_tiempo")
 	private int tipoActivoCantidadTiempo;
@@ -33,10 +32,10 @@ public class CatalogoTipoActivo implements Serializable {
 	@Column(name="tipo_activo_categoria_origen")
 	private int tipoActivoCategoriaOrigen;
 
-	@Column(name="tipo_activo_descripcion", length=200)
+	@Column(name="tipo_activo_descripcion")
 	private String tipoActivoDescripcion;
 
-	@Column(name="tipo_activo_estado", nullable=false)
+	@Column(name="tipo_activo_estado")
 	private int tipoActivoEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -47,20 +46,20 @@ public class CatalogoTipoActivo implements Serializable {
 	@Column(name="tipo_activo_fecha_modi")
 	private Date tipoActivoFechaModi;
 
-	@Column(name="tipo_activo_id_usuario_crea", length=10)
+	@Column(name="tipo_activo_id_usuario_crea")
 	private String tipoActivoIdUsuarioCrea;
 
-	@Column(name="tipo_activo_id_usuario_modi", length=10)
+	@Column(name="tipo_activo_id_usuario_modi")
 	private String tipoActivoIdUsuarioModi;
 
-	@Column(name="tipo_activo_nombre", nullable=false, length=100)
+	@Column(name="tipo_activo_nombre")
 	private String tipoActivoNombre;
 
 	@Column(name="tipo_activo_porcentaje")
 	private int tipoActivoPorcentaje;
 
 	@Column(name="tipo_activo_tiempo_id")
-	private int tipoActivoTiempoId;
+	private String tipoActivoTiempoId;
 
 	//bi-directional many-to-one association to Bienes
 	@OneToMany(mappedBy="catalogoTipoActivo")
@@ -73,11 +72,11 @@ public class CatalogoTipoActivo implements Serializable {
 	public CatalogoTipoActivo() {
 	}
 
-	public int getTipoActivoId() {
+	public String getTipoActivoId() {
 		return this.tipoActivoId;
 	}
 
-	public void setTipoActivoId(int tipoActivoId) {
+	public void setTipoActivoId(String tipoActivoId) {
 		this.tipoActivoId = tipoActivoId;
 	}
 
@@ -169,11 +168,11 @@ public class CatalogoTipoActivo implements Serializable {
 		this.tipoActivoPorcentaje = tipoActivoPorcentaje;
 	}
 
-	public int getTipoActivoTiempoId() {
+	public String getTipoActivoTiempoId() {
 		return this.tipoActivoTiempoId;
 	}
 
-	public void setTipoActivoTiempoId(int tipoActivoTiempoId) {
+	public void setTipoActivoTiempoId(String tipoActivoTiempoId) {
 		this.tipoActivoTiempoId = tipoActivoTiempoId;
 	}
 

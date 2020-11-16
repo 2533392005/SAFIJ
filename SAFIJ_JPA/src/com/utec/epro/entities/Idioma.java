@@ -19,11 +19,10 @@ public class Idioma implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="idioma_id", unique=true, nullable=false)
-	private int idiomaId;
+	@Column(name="idioma_id")
+	private String idiomaId;
 
-	@Column(name="idioma_estado", nullable=false)
+	@Column(name="idioma_estado")
 	private int idiomaEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -34,23 +33,23 @@ public class Idioma implements Serializable {
 	@Column(name="idioma_fecha_modifica")
 	private Date idiomaFechaModifica;
 
-	@Column(name="idioma_nombre", length=100)
+	@Column(name="idioma_nombre")
 	private String idiomaNombre;
 
 	@Column(name="idioma_usuario_crea")
-	private int idiomaUsuarioCrea;
+	private String idiomaUsuarioCrea;
 
 	@Column(name="idioma_usuario_modifica")
-	private int idiomaUsuarioModifica;
+	private String idiomaUsuarioModifica;
 
 	public Idioma() {
 	}
 
-	public int getIdiomaId() {
+	public String getIdiomaId() {
 		return this.idiomaId;
 	}
 
-	public void setIdiomaId(int idiomaId) {
+	public void setIdiomaId(String idiomaId) {
 		this.idiomaId = idiomaId;
 	}
 
@@ -86,19 +85,19 @@ public class Idioma implements Serializable {
 		this.idiomaNombre = idiomaNombre;
 	}
 
-	public int getIdiomaUsuarioCrea() {
+	public String getIdiomaUsuarioCrea() {
 		return this.idiomaUsuarioCrea;
 	}
 
-	public void setIdiomaUsuarioCrea(int idiomaUsuarioCrea) {
+	public void setIdiomaUsuarioCrea(String idiomaUsuarioCrea) {
 		this.idiomaUsuarioCrea = idiomaUsuarioCrea;
 	}
 
-	public int getIdiomaUsuarioModifica() {
+	public String getIdiomaUsuarioModifica() {
 		return this.idiomaUsuarioModifica;
 	}
 
-	public void setIdiomaUsuarioModifica(int idiomaUsuarioModifica) {
+	public void setIdiomaUsuarioModifica(String idiomaUsuarioModifica) {
 		this.idiomaUsuarioModifica = idiomaUsuarioModifica;
 	}
 

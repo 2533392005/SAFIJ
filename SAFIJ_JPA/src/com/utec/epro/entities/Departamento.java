@@ -20,11 +20,10 @@ public class Departamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="departamento_id", unique=true, nullable=false)
-	private int departamentoId;
+	@Column(name="departamento_id")
+	private String departamentoId;
 
-	@Column(name="departamento_estado", nullable=false)
+	@Column(name="departamento_estado")
 	private int departamentoEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Departamento implements Serializable {
 	@Column(name="departamento_fecha_modifica")
 	private Date departamentoFechaModifica;
 
-	@Column(name="departamento_nombre", length=100)
+	@Column(name="departamento_nombre")
 	private String departamentoNombre;
 
 	@Column(name="departamento_usuario_crea")
-	private int departamentoUsuarioCrea;
+	private String departamentoUsuarioCrea;
 
 	@Column(name="departamento_usuario_modifica")
-	private int departamentoUsuarioModifica;
+	private String departamentoUsuarioModifica;
 
 	//bi-directional many-to-one association to CatalogoAgencias
 	@OneToMany(mappedBy="departamento")
@@ -60,11 +59,11 @@ public class Departamento implements Serializable {
 	public Departamento() {
 	}
 
-	public int getDepartamentoId() {
+	public String getDepartamentoId() {
 		return this.departamentoId;
 	}
 
-	public void setDepartamentoId(int departamentoId) {
+	public void setDepartamentoId(String departamentoId) {
 		this.departamentoId = departamentoId;
 	}
 
@@ -100,19 +99,19 @@ public class Departamento implements Serializable {
 		this.departamentoNombre = departamentoNombre;
 	}
 
-	public int getDepartamentoUsuarioCrea() {
+	public String getDepartamentoUsuarioCrea() {
 		return this.departamentoUsuarioCrea;
 	}
 
-	public void setDepartamentoUsuarioCrea(int departamentoUsuarioCrea) {
+	public void setDepartamentoUsuarioCrea(String departamentoUsuarioCrea) {
 		this.departamentoUsuarioCrea = departamentoUsuarioCrea;
 	}
 
-	public int getDepartamentoUsuarioModifica() {
+	public String getDepartamentoUsuarioModifica() {
 		return this.departamentoUsuarioModifica;
 	}
 
-	public void setDepartamentoUsuarioModifica(int departamentoUsuarioModifica) {
+	public void setDepartamentoUsuarioModifica(String departamentoUsuarioModifica) {
 		this.departamentoUsuarioModifica = departamentoUsuarioModifica;
 	}
 

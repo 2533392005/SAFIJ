@@ -20,11 +20,10 @@ public class Ciudad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ciudad_id", unique=true, nullable=false)
-	private int ciudadId;
+	@Column(name="ciudad_id")
+	private String ciudadId;
 
-	@Column(name="ciudad_estado", nullable=false)
+	@Column(name="ciudad_estado")
 	private int ciudadEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Ciudad implements Serializable {
 	@Column(name="ciudad_fecha_modifica")
 	private Date ciudadFechaModifica;
 
-	@Column(name="ciudad_nombre", length=100)
+	@Column(name="ciudad_nombre")
 	private String ciudadNombre;
 
 	@Column(name="ciudad_usuario_crea")
-	private int ciudadUsuarioCrea;
+	private String ciudadUsuarioCrea;
 
 	@Column(name="ciudad_usuario_modifica")
-	private int ciudadUsuarioModifica;
+	private String ciudadUsuarioModifica;
 
 	//bi-directional many-to-one association to CatalogoAgencias
 	@OneToMany(mappedBy="ciudad")
@@ -56,11 +55,11 @@ public class Ciudad implements Serializable {
 	public Ciudad() {
 	}
 
-	public int getCiudadId() {
+	public String getCiudadId() {
 		return this.ciudadId;
 	}
 
-	public void setCiudadId(int ciudadId) {
+	public void setCiudadId(String ciudadId) {
 		this.ciudadId = ciudadId;
 	}
 
@@ -96,19 +95,19 @@ public class Ciudad implements Serializable {
 		this.ciudadNombre = ciudadNombre;
 	}
 
-	public int getCiudadUsuarioCrea() {
+	public String getCiudadUsuarioCrea() {
 		return this.ciudadUsuarioCrea;
 	}
 
-	public void setCiudadUsuarioCrea(int ciudadUsuarioCrea) {
+	public void setCiudadUsuarioCrea(String ciudadUsuarioCrea) {
 		this.ciudadUsuarioCrea = ciudadUsuarioCrea;
 	}
 
-	public int getCiudadUsuarioModifica() {
+	public String getCiudadUsuarioModifica() {
 		return this.ciudadUsuarioModifica;
 	}
 
-	public void setCiudadUsuarioModifica(int ciudadUsuarioModifica) {
+	public void setCiudadUsuarioModifica(String ciudadUsuarioModifica) {
 		this.ciudadUsuarioModifica = ciudadUsuarioModifica;
 	}
 

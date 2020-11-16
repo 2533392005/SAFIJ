@@ -19,15 +19,14 @@ public class Transaccion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="transaccion_id", unique=true, nullable=false)
-	private int transaccionId;
+	@Column(name="transaccion_id")
+	private String transaccionId;
 
 	@Lob
 	@Column(name="transaccion_detalle")
 	private byte[] transaccionDetalle;
 
-	@Column(name="transaccion_estado", nullable=false)
+	@Column(name="transaccion_estado")
 	private int transaccionEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -46,19 +45,19 @@ public class Transaccion implements Serializable {
 	@Column(name="transaccion_fecha_modi")
 	private Date transaccionFechaModi;
 
-	@Column(name="transaccion_id_usuario_crea", length=10)
+	@Column(name="transaccion_id_usuario_crea")
 	private String transaccionIdUsuarioCrea;
 
-	@Column(name="transaccion_id_usuario_modi", length=10)
+	@Column(name="transaccion_id_usuario_modi")
 	private String transaccionIdUsuarioModi;
 
-	@Column(name="transaccion_orientacion", nullable=false)
+	@Column(name="transaccion_orientacion")
 	private int transaccionOrientacion;
 
-	@Column(name="transaccion_servicio", nullable=false)
+	@Column(name="transaccion_servicio")
 	private int transaccionServicio;
 
-	@Column(name="transaccion_tipo", nullable=false)
+	@Column(name="transaccion_tipo")
 	private int transaccionTipo;
 
 	//bi-directional many-to-one association to Periodos
@@ -69,11 +68,11 @@ public class Transaccion implements Serializable {
 	public Transaccion() {
 	}
 
-	public int getTransaccionId() {
+	public String getTransaccionId() {
 		return this.transaccionId;
 	}
 
-	public void setTransaccionId(int transaccionId) {
+	public void setTransaccionId(String transaccionId) {
 		this.transaccionId = transaccionId;
 	}
 

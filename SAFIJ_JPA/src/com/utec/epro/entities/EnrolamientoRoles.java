@@ -20,14 +20,13 @@ public class EnrolamientoRoles implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="roles_id", unique=true, nullable=false)
-	private int rolesId;
+	@Column(name="roles_id")
+	private String rolesId;
 
 	@Column(name="roles_descripcion")
-	private int rolesDescripcion;
+	private String rolesDescripcion;
 
-	@Column(name="roles_estado", nullable=false)
+	@Column(name="roles_estado")
 	private int rolesEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -38,40 +37,40 @@ public class EnrolamientoRoles implements Serializable {
 	@Column(name="roles_fecha_modi")
 	private Date rolesFechaModi;
 
-	@Column(name="roles_id_usuario_crea", length=10)
+	@Column(name="roles_id_usuario_crea")
 	private String rolesIdUsuarioCrea;
 
-	@Column(name="roles_id_usuario_modi", length=10)
+	@Column(name="roles_id_usuario_modi")
 	private String rolesIdUsuarioModi;
 
 	@Column(name="roles_llave0")
-	private int rolesLlave0;
+	private String rolesLlave0;
 
-	@Column(name="roles_llave1", length=11)
+	@Column(name="roles_llave1")
 	private String rolesLlave1;
 
-	@Column(name="roles_nivel0", nullable=false)
+	@Column(name="roles_nivel0")
 	private int rolesNivel0;
 
-	@Column(name="roles_nivel1", nullable=false)
+	@Column(name="roles_nivel1")
 	private int rolesNivel1;
 
-	@Column(name="roles_nivel2", nullable=false)
+	@Column(name="roles_nivel2")
 	private int rolesNivel2;
 
-	@Column(name="roles_nivel3", nullable=false)
+	@Column(name="roles_nivel3")
 	private int rolesNivel3;
 
-	@Column(name="roles_nivel4", nullable=false)
+	@Column(name="roles_nivel4")
 	private int rolesNivel4;
 
-	@Column(name="roles_nombre", nullable=false)
-	private int rolesNombre;
+	@Column(name="roles_nombre")
+	private String rolesNombre;
 
-	//bi-directional many-to-one association to EnrolamientoAcceso
+	//bi-directional many-to-one association to EnrolamientoAccesos
 	@ManyToOne
 	@JoinColumn(name="accesos_id")
-	private EnrolamientoAcceso enrolamientoAcceso;
+	private EnrolamientoAccesos enrolamientoAcceso;
 
 	//bi-directional many-to-one association to EnrolamientoUsuarios
 	@OneToMany(mappedBy="enrolamientoRole")
@@ -80,19 +79,19 @@ public class EnrolamientoRoles implements Serializable {
 	public EnrolamientoRoles() {
 	}
 
-	public int getRolesId() {
+	public String getRolesId() {
 		return this.rolesId;
 	}
 
-	public void setRolesId(int rolesId) {
+	public void setRolesId(String rolesId) {
 		this.rolesId = rolesId;
 	}
 
-	public int getRolesDescripcion() {
+	public String getRolesDescripcion() {
 		return this.rolesDescripcion;
 	}
 
-	public void setRolesDescripcion(int rolesDescripcion) {
+	public void setRolesDescripcion(String rolesDescripcion) {
 		this.rolesDescripcion = rolesDescripcion;
 	}
 
@@ -136,11 +135,11 @@ public class EnrolamientoRoles implements Serializable {
 		this.rolesIdUsuarioModi = rolesIdUsuarioModi;
 	}
 
-	public int getRolesLlave0() {
+	public String getRolesLlave0() {
 		return this.rolesLlave0;
 	}
 
-	public void setRolesLlave0(int rolesLlave0) {
+	public void setRolesLlave0(String rolesLlave0) {
 		this.rolesLlave0 = rolesLlave0;
 	}
 
@@ -192,19 +191,19 @@ public class EnrolamientoRoles implements Serializable {
 		this.rolesNivel4 = rolesNivel4;
 	}
 
-	public int getRolesNombre() {
+	public String getRolesNombre() {
 		return this.rolesNombre;
 	}
 
-	public void setRolesNombre(int rolesNombre) {
+	public void setRolesNombre(String rolesNombre) {
 		this.rolesNombre = rolesNombre;
 	}
 
-	public EnrolamientoAcceso getEnrolamientoAcceso() {
+	public EnrolamientoAccesos getEnrolamientoAcceso() {
 		return this.enrolamientoAcceso;
 	}
 
-	public void setEnrolamientoAcceso(EnrolamientoAcceso enrolamientoAcceso) {
+	public void setEnrolamientoAcceso(EnrolamientoAccesos enrolamientoAcceso) {
 		this.enrolamientoAcceso = enrolamientoAcceso;
 	}
 

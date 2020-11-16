@@ -20,11 +20,10 @@ public class Civil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="estado_civil_id", unique=true, nullable=false)
-	private int estadoCivilId;
+	@Column(name="estado_civil_id")
+	private String estadoCivilId;
 
-	@Column(name="estado_civil_estado", nullable=false)
+	@Column(name="estado_civil_estado")
 	private int estadoCivilEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Civil implements Serializable {
 	@Column(name="estado_civil_fecha_modifica")
 	private Date estadoCivilFechaModifica;
 
-	@Column(name="estado_civil_nombre", length=100)
+	@Column(name="estado_civil_nombre")
 	private String estadoCivilNombre;
 
 	@Column(name="estado_civil_usuario_crea")
-	private int estadoCivilUsuarioCrea;
+	private String estadoCivilUsuarioCrea;
 
 	@Column(name="estado_civil_usuario_modifica")
-	private int estadoCivilUsuarioModifica;
+	private String estadoCivilUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@OneToMany(mappedBy="civil")
@@ -51,11 +50,11 @@ public class Civil implements Serializable {
 	public Civil() {
 	}
 
-	public int getEstadoCivilId() {
+	public String getEstadoCivilId() {
 		return this.estadoCivilId;
 	}
 
-	public void setEstadoCivilId(int estadoCivilId) {
+	public void setEstadoCivilId(String estadoCivilId) {
 		this.estadoCivilId = estadoCivilId;
 	}
 
@@ -91,19 +90,19 @@ public class Civil implements Serializable {
 		this.estadoCivilNombre = estadoCivilNombre;
 	}
 
-	public int getEstadoCivilUsuarioCrea() {
+	public String getEstadoCivilUsuarioCrea() {
 		return this.estadoCivilUsuarioCrea;
 	}
 
-	public void setEstadoCivilUsuarioCrea(int estadoCivilUsuarioCrea) {
+	public void setEstadoCivilUsuarioCrea(String estadoCivilUsuarioCrea) {
 		this.estadoCivilUsuarioCrea = estadoCivilUsuarioCrea;
 	}
 
-	public int getEstadoCivilUsuarioModifica() {
+	public String getEstadoCivilUsuarioModifica() {
 		return this.estadoCivilUsuarioModifica;
 	}
 
-	public void setEstadoCivilUsuarioModifica(int estadoCivilUsuarioModifica) {
+	public void setEstadoCivilUsuarioModifica(String estadoCivilUsuarioModifica) {
 		this.estadoCivilUsuarioModifica = estadoCivilUsuarioModifica;
 	}
 

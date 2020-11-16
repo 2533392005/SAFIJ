@@ -20,11 +20,10 @@ public class Parentesco implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="parentesco_id", unique=true, nullable=false)
-	private int parentescoId;
+	@Column(name="parentesco_id")
+	private String parentescoId;
 
-	@Column(name="parentesco_estado", nullable=false)
+	@Column(name="parentesco_estado")
 	private int parentescoEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Parentesco implements Serializable {
 	@Column(name="parentesco_fecha_modifica")
 	private Date parentescoFechaModifica;
 
-	@Column(name="parentesco_nombre", length=100)
+	@Column(name="parentesco_nombre")
 	private String parentescoNombre;
 
 	@Column(name="parentesco_usuario_crea")
-	private int parentescoUsuarioCrea;
+	private String parentescoUsuarioCrea;
 
 	@Column(name="parentesco_usuario_modifica")
-	private int parentescoUsuarioModifica;
+	private String parentescoUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalContactos
 	@OneToMany(mappedBy="parentesco")
@@ -51,11 +50,11 @@ public class Parentesco implements Serializable {
 	public Parentesco() {
 	}
 
-	public int getParentescoId() {
+	public String getParentescoId() {
 		return this.parentescoId;
 	}
 
-	public void setParentescoId(int parentescoId) {
+	public void setParentescoId(String parentescoId) {
 		this.parentescoId = parentescoId;
 	}
 
@@ -91,19 +90,19 @@ public class Parentesco implements Serializable {
 		this.parentescoNombre = parentescoNombre;
 	}
 
-	public int getParentescoUsuarioCrea() {
+	public String getParentescoUsuarioCrea() {
 		return this.parentescoUsuarioCrea;
 	}
 
-	public void setParentescoUsuarioCrea(int parentescoUsuarioCrea) {
+	public void setParentescoUsuarioCrea(String parentescoUsuarioCrea) {
 		this.parentescoUsuarioCrea = parentescoUsuarioCrea;
 	}
 
-	public int getParentescoUsuarioModifica() {
+	public String getParentescoUsuarioModifica() {
 		return this.parentescoUsuarioModifica;
 	}
 
-	public void setParentescoUsuarioModifica(int parentescoUsuarioModifica) {
+	public void setParentescoUsuarioModifica(String parentescoUsuarioModifica) {
 		this.parentescoUsuarioModifica = parentescoUsuarioModifica;
 	}
 

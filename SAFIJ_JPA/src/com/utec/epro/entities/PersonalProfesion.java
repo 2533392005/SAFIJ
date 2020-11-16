@@ -20,11 +20,10 @@ public class PersonalProfesion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="profesion_id", unique=true, nullable=false)
-	private int profesionId;
+	@Column(name="profesion_id")
+	private String profesionId;
 
-	@Column(name="profesion_estado", nullable=false)
+	@Column(name="profesion_estado")
 	private int profesionEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class PersonalProfesion implements Serializable {
 	@Column(name="profesion_fecha_modifica")
 	private Date profesionFechaModifica;
 
-	@Column(name="profesion_nombre", length=100)
+	@Column(name="profesion_nombre")
 	private String profesionNombre;
 
 	@Column(name="profesion_usuario_crea")
-	private int profesionUsuarioCrea;
+	private String profesionUsuarioCrea;
 
 	@Column(name="profesion_usuario_modifica")
-	private int profesionUsuarioModifica;
+	private String profesionUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@OneToMany(mappedBy="personalProfesion")
@@ -51,11 +50,11 @@ public class PersonalProfesion implements Serializable {
 	public PersonalProfesion() {
 	}
 
-	public int getProfesionId() {
+	public String getProfesionId() {
 		return this.profesionId;
 	}
 
-	public void setProfesionId(int profesionId) {
+	public void setProfesionId(String profesionId) {
 		this.profesionId = profesionId;
 	}
 
@@ -91,19 +90,19 @@ public class PersonalProfesion implements Serializable {
 		this.profesionNombre = profesionNombre;
 	}
 
-	public int getProfesionUsuarioCrea() {
+	public String getProfesionUsuarioCrea() {
 		return this.profesionUsuarioCrea;
 	}
 
-	public void setProfesionUsuarioCrea(int profesionUsuarioCrea) {
+	public void setProfesionUsuarioCrea(String profesionUsuarioCrea) {
 		this.profesionUsuarioCrea = profesionUsuarioCrea;
 	}
 
-	public int getProfesionUsuarioModifica() {
+	public String getProfesionUsuarioModifica() {
 		return this.profesionUsuarioModifica;
 	}
 
-	public void setProfesionUsuarioModifica(int profesionUsuarioModifica) {
+	public void setProfesionUsuarioModifica(String profesionUsuarioModifica) {
 		this.profesionUsuarioModifica = profesionUsuarioModifica;
 	}
 

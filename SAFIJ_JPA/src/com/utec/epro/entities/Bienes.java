@@ -2,7 +2,7 @@ package com.utec.epro.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -14,41 +14,40 @@ import java.util.Date;
 @Table(name="bienes")
 @NamedQueries({
 	@NamedQuery(name="Bienes.findAll", query="SELECT b FROM Bienes b"),
-	@NamedQuery(name = "Bienes.findByBienesId", query = "SELECT b FROM Bienes b WHERE b.bienesId = :bienesId")
-})
+	@NamedQuery(name="Bienes.findByBienesId", query = "SELECT b FROM Bienes b WHERE b.bienesId = :bienesId")
+})	
 public class Bienes implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="bienes_id", unique=true, nullable=false)
-	private int bienesId;
+	@Column(name="bienes_id")
+	private String bienesId;
 
 	@Column(name="bienes_cantidad")
 	private int bienesCantidad;
 
 	@Column(name="bienes_cantidad_lote")
-	private int bienesCantidadLote;
+	private String bienesCantidadLote;
 
-	@Column(name="bienes_codigo", nullable=false)
-	private int bienesCodigo;
+	@Column(name="bienes_codigo")
+	private String bienesCodigo;
 
 	@Column(name="bienes_codigo_adicional")
-	private int bienesCodigoAdicional;
+	private String bienesCodigoAdicional;
 
-	@Column(name="bienes_descripcion", length=500)
+	@Column(name="bienes_descripcion")
 	private String bienesDescripcion;
 
-	@Column(name="bienes_detalle", length=500)
+	@Column(name="bienes_detalle")
 	private String bienesDetalle;
 
-	@Column(name="bienes_estado", nullable=false)
+	@Column(name="bienes_estado")
 	private int bienesEstado;
 
 	@Column(name="bienes_estado_actual")
 	private int bienesEstadoActual;
 
-	@Column(name="bienes_estado_af", length=50)
+	@Column(name="bienes_estado_af")
 	private String bienesEstadoAf;
 
 	@Column(name="bienes_estado_original")
@@ -57,7 +56,7 @@ public class Bienes implements Serializable {
 	@Column(name="bienes_estado_procedencia")
 	private int bienesEstadoProcedencia;
 
-	@Column(name="bienes_familia", length=50)
+	@Column(name="bienes_familia")
 	private String bienesFamilia;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -76,61 +75,61 @@ public class Bienes implements Serializable {
 	@Column(name="bienes_fecha_venta")
 	private Date bienesFechaVenta;
 
-	@Column(name="bienes_id_usuario_crea", length=10)
+	@Column(name="bienes_id_usuario_crea")
 	private String bienesIdUsuarioCrea;
 
-	@Column(name="bienes_id_usuario_modi", length=10)
+	@Column(name="bienes_id_usuario_modi")
 	private String bienesIdUsuarioModi;
 
 	@Column(name="bienes_monto_compra")
-	private int bienesMontoCompra;
+	private BigDecimal bienesMontoCompra;
 
 	@Column(name="bienes_monto_venta")
-	private int bienesMontoVenta;
+	private BigDecimal bienesMontoVenta;
 
-	@Column(name="bienes_no_contrato", length=50)
+	@Column(name="bienes_no_contrato")
 	private String bienesNoContrato;
 
-	@Column(name="bienes_no_factura", length=500)
+	@Column(name="bienes_no_factura")
 	private String bienesNoFactura;
 
-	@Column(name="bienes_no_poliza", length=50)
+	@Column(name="bienes_no_poliza")
 	private String bienesNoPoliza;
 
-	@Column(name="bienes_no_ruc_proveed", length=500)
+	@Column(name="bienes_no_ruc_proveed")
 	private String bienesNoRucProveed;
 
-	@Column(name="bienes_no_serie", length=50)
+	@Column(name="bienes_no_serie")
 	private String bienesNoSerie;
 
-	@Column(name="bienes_razon_social", length=50)
+	@Column(name="bienes_razon_social")
 	private String bienesRazonSocial;
 
 	@Column(name="bienes_responsable")
-	private int bienesResponsable;
+	private String bienesResponsable;
 
-	@Column(name="bienes_sub_familia", length=50)
+	@Column(name="bienes_sub_familia")
 	private String bienesSubFamilia;
 
-	@Column(name="bienes_tipo_adquisicion", nullable=false)
+	@Column(name="bienes_tipo_adquisicion")
 	private int bienesTipoAdquisicion;
 
-	@Column(name="bienes_ubicacion_inicial", length=50)
+	@Column(name="bienes_ubicacion_inicial")
 	private String bienesUbicacionInicial;
 
 	//bi-directional many-to-one association to CatalogoTipoActivo
 	@ManyToOne
-	@JoinColumn(name="tipo_activo_id", nullable=false)
+	@JoinColumn(name="tipo_activo_id")
 	private CatalogoTipoActivo catalogoTipoActivo;
 
 	public Bienes() {
 	}
 
-	public int getBienesId() {
+	public String getBienesId() {
 		return this.bienesId;
 	}
 
-	public void setBienesId(int bienesId) {
+	public void setBienesId(String bienesId) {
 		this.bienesId = bienesId;
 	}
 
@@ -142,27 +141,27 @@ public class Bienes implements Serializable {
 		this.bienesCantidad = bienesCantidad;
 	}
 
-	public int getBienesCantidadLote() {
+	public String getBienesCantidadLote() {
 		return this.bienesCantidadLote;
 	}
 
-	public void setBienesCantidadLote(int bienesCantidadLote) {
+	public void setBienesCantidadLote(String bienesCantidadLote) {
 		this.bienesCantidadLote = bienesCantidadLote;
 	}
 
-	public int getBienesCodigo() {
+	public String getBienesCodigo() {
 		return this.bienesCodigo;
 	}
 
-	public void setBienesCodigo(int bienesCodigo) {
+	public void setBienesCodigo(String bienesCodigo) {
 		this.bienesCodigo = bienesCodigo;
 	}
 
-	public int getBienesCodigoAdicional() {
+	public String getBienesCodigoAdicional() {
 		return this.bienesCodigoAdicional;
 	}
 
-	public void setBienesCodigoAdicional(int bienesCodigoAdicional) {
+	public void setBienesCodigoAdicional(String bienesCodigoAdicional) {
 		this.bienesCodigoAdicional = bienesCodigoAdicional;
 	}
 
@@ -278,19 +277,19 @@ public class Bienes implements Serializable {
 		this.bienesIdUsuarioModi = bienesIdUsuarioModi;
 	}
 
-	public int getBienesMontoCompra() {
+	public BigDecimal getBienesMontoCompra() {
 		return this.bienesMontoCompra;
 	}
 
-	public void setBienesMontoCompra(int bienesMontoCompra) {
+	public void setBienesMontoCompra(BigDecimal bienesMontoCompra) {
 		this.bienesMontoCompra = bienesMontoCompra;
 	}
 
-	public int getBienesMontoVenta() {
+	public BigDecimal getBienesMontoVenta() {
 		return this.bienesMontoVenta;
 	}
 
-	public void setBienesMontoVenta(int bienesMontoVenta) {
+	public void setBienesMontoVenta(BigDecimal bienesMontoVenta) {
 		this.bienesMontoVenta = bienesMontoVenta;
 	}
 
@@ -342,11 +341,11 @@ public class Bienes implements Serializable {
 		this.bienesRazonSocial = bienesRazonSocial;
 	}
 
-	public int getBienesResponsable() {
+	public String getBienesResponsable() {
 		return this.bienesResponsable;
 	}
 
-	public void setBienesResponsable(int bienesResponsable) {
+	public void setBienesResponsable(String bienesResponsable) {
 		this.bienesResponsable = bienesResponsable;
 	}
 

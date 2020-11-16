@@ -2,6 +2,7 @@ package com.utec.epro.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -19,20 +20,19 @@ public class Mantenimientos implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="mantenimientos_id", unique=true, nullable=false)
-	private int mantenimientosId;
+	@Column(name="mantenimientos_id")
+	private String mantenimientosId;
 
-	@Column(name="mantenimientos_avance", nullable=false)
+	@Column(name="mantenimientos_avance")
 	private int mantenimientosAvance;
 
-	@Column(name="mantenimientos_condicion", nullable=false)
+	@Column(name="mantenimientos_condicion")
 	private int mantenimientosCondicion;
 
-	@Column(name="mantenimientos_detalle", length=500)
+	@Column(name="mantenimientos_detalle")
 	private String mantenimientosDetalle;
 
-	@Column(name="mantenimientos_estado", nullable=false)
+	@Column(name="mantenimientos_estado")
 	private int mantenimientosEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -51,31 +51,31 @@ public class Mantenimientos implements Serializable {
 	@Column(name="mantenimientos_fecha_modi")
 	private Date mantenimientosFechaModi;
 
-	@Column(name="mantenimientos_id_usuario_crea", length=10)
+	@Column(name="mantenimientos_id_usuario_crea")
 	private String mantenimientosIdUsuarioCrea;
 
-	@Column(name="mantenimientos_id_usuario_modi", length=10)
+	@Column(name="mantenimientos_id_usuario_modi")
 	private String mantenimientosIdUsuarioModi;
 
-	@Column(name="mantenimientos_monto_final", nullable=false)
-	private int mantenimientosMontoFinal;
+	@Column(name="mantenimientos_monto_final")
+	private BigDecimal mantenimientosMontoFinal;
 
-	@Column(name="mantenimientos_tipo", nullable=false)
+	@Column(name="mantenimientos_tipo")
 	private int mantenimientosTipo;
 
 	//bi-directional many-to-one association to Inventario
 	@ManyToOne
-	@JoinColumn(name="inventario_id", nullable=false)
+	@JoinColumn(name="inventario_id")
 	private Inventario inventario;
 
 	public Mantenimientos() {
 	}
 
-	public int getMantenimientosId() {
+	public String getMantenimientosId() {
 		return this.mantenimientosId;
 	}
 
-	public void setMantenimientosId(int mantenimientosId) {
+	public void setMantenimientosId(String mantenimientosId) {
 		this.mantenimientosId = mantenimientosId;
 	}
 
@@ -159,11 +159,11 @@ public class Mantenimientos implements Serializable {
 		this.mantenimientosIdUsuarioModi = mantenimientosIdUsuarioModi;
 	}
 
-	public int getMantenimientosMontoFinal() {
+	public BigDecimal getMantenimientosMontoFinal() {
 		return this.mantenimientosMontoFinal;
 	}
 
-	public void setMantenimientosMontoFinal(int mantenimientosMontoFinal) {
+	public void setMantenimientosMontoFinal(BigDecimal mantenimientosMontoFinal) {
 		this.mantenimientosMontoFinal = mantenimientosMontoFinal;
 	}
 

@@ -15,16 +15,15 @@ import java.util.List;
 @NamedQueries({
 	@NamedQuery(name="Genero.findAll", query="SELECT g FROM Genero g"),
 	@NamedQuery(name="Genero.findByGeneroId", query="SELECT g FROM Genero g where g.generoId = :generoId")
-})
+})	
 public class Genero implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="genero_id", unique=true, nullable=false)
-	private int generoId;
+	@Column(name="genero_id")
+	private String generoId;
 
-	@Column(name="genero_estado", nullable=false)
+	@Column(name="genero_estado")
 	private int generoEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,14 +34,14 @@ public class Genero implements Serializable {
 	@Column(name="genero_fecha_modifica")
 	private Date generoFechaModifica;
 
-	@Column(name="genero_nombre", length=100)
+	@Column(name="genero_nombre")
 	private String generoNombre;
 
 	@Column(name="genero_usuario_crea")
-	private int generoUsuarioCrea;
+	private String generoUsuarioCrea;
 
 	@Column(name="genero_usuario_modifica")
-	private int generoUsuarioModifica;
+	private String generoUsuarioModifica;
 
 	//bi-directional many-to-one association to PersonalPersona
 	@OneToMany(mappedBy="genero")
@@ -51,11 +50,11 @@ public class Genero implements Serializable {
 	public Genero() {
 	}
 
-	public int getGeneroId() {
+	public String getGeneroId() {
 		return this.generoId;
 	}
 
-	public void setGeneroId(int generoId) {
+	public void setGeneroId(String generoId) {
 		this.generoId = generoId;
 	}
 
@@ -91,19 +90,19 @@ public class Genero implements Serializable {
 		this.generoNombre = generoNombre;
 	}
 
-	public int getGeneroUsuarioCrea() {
+	public String getGeneroUsuarioCrea() {
 		return this.generoUsuarioCrea;
 	}
 
-	public void setGeneroUsuarioCrea(int generoUsuarioCrea) {
+	public void setGeneroUsuarioCrea(String generoUsuarioCrea) {
 		this.generoUsuarioCrea = generoUsuarioCrea;
 	}
 
-	public int getGeneroUsuarioModifica() {
+	public String getGeneroUsuarioModifica() {
 		return this.generoUsuarioModifica;
 	}
 
-	public void setGeneroUsuarioModifica(int generoUsuarioModifica) {
+	public void setGeneroUsuarioModifica(String generoUsuarioModifica) {
 		this.generoUsuarioModifica = generoUsuarioModifica;
 	}
 

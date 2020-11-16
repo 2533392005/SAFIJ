@@ -2,6 +2,7 @@ package com.utec.epro.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -19,17 +20,16 @@ public class Depreciacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="depreciacion_id", unique=true, nullable=false)
-	private int depreciacionId;
+	@Column(name="depreciacion_id")
+	private String depreciacionId;
 
-	@Column(name="depreciacion_control", nullable=false)
-	private int depreciacionControl;
+	@Column(name="depreciacion_control")
+	private String depreciacionControl;
 
-	@Column(name="depreciacion_correlativo", nullable=false)
+	@Column(name="depreciacion_correlativo")
 	private int depreciacionCorrelativo;
 
-	@Column(name="depreciacion_estado", nullable=false)
+	@Column(name="depreciacion_estado")
 	private int depreciacionEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -48,24 +48,24 @@ public class Depreciacion implements Serializable {
 	@Column(name="depreciacion_fecha_modi")
 	private Date depreciacionFechaModi;
 
-	@Column(name="depreciacion_id_usuario_crea", length=10)
+	@Column(name="depreciacion_id_usuario_crea")
 	private String depreciacionIdUsuarioCrea;
 
-	@Column(name="depreciacion_id_usuario_modi", length=10)
+	@Column(name="depreciacion_id_usuario_modi")
 	private String depreciacionIdUsuarioModi;
 
-	@Column(name="depreciacion_monto_depreciado", nullable=false)
-	private int depreciacionMontoDepreciado;
+	@Column(name="depreciacion_monto_depreciado")
+	private BigDecimal depreciacionMontoDepreciado;
 
-	@Column(name="depreciacion_monto_inicial", nullable=false)
-	private int depreciacionMontoInicial;
+	@Column(name="depreciacion_monto_inicial")
+	private BigDecimal depreciacionMontoInicial;
 
-	@Column(name="depreciacion_monto_restante", nullable=false)
-	private int depreciacionMontoRestante;
+	@Column(name="depreciacion_monto_restante")
+	private BigDecimal depreciacionMontoRestante;
 
 	//bi-directional many-to-one association to Inventario
 	@ManyToOne
-	@JoinColumn(name="inventario_id", nullable=false)
+	@JoinColumn(name="inventario_id")
 	private Inventario inventario;
 
 	//bi-directional many-to-one association to Periodos
@@ -81,19 +81,19 @@ public class Depreciacion implements Serializable {
 	public Depreciacion() {
 	}
 
-	public int getDepreciacionId() {
+	public String getDepreciacionId() {
 		return this.depreciacionId;
 	}
 
-	public void setDepreciacionId(int depreciacionId) {
+	public void setDepreciacionId(String depreciacionId) {
 		this.depreciacionId = depreciacionId;
 	}
 
-	public int getDepreciacionControl() {
+	public String getDepreciacionControl() {
 		return this.depreciacionControl;
 	}
 
-	public void setDepreciacionControl(int depreciacionControl) {
+	public void setDepreciacionControl(String depreciacionControl) {
 		this.depreciacionControl = depreciacionControl;
 	}
 
@@ -161,27 +161,27 @@ public class Depreciacion implements Serializable {
 		this.depreciacionIdUsuarioModi = depreciacionIdUsuarioModi;
 	}
 
-	public int getDepreciacionMontoDepreciado() {
+	public BigDecimal getDepreciacionMontoDepreciado() {
 		return this.depreciacionMontoDepreciado;
 	}
 
-	public void setDepreciacionMontoDepreciado(int depreciacionMontoDepreciado) {
+	public void setDepreciacionMontoDepreciado(BigDecimal depreciacionMontoDepreciado) {
 		this.depreciacionMontoDepreciado = depreciacionMontoDepreciado;
 	}
 
-	public int getDepreciacionMontoInicial() {
+	public BigDecimal getDepreciacionMontoInicial() {
 		return this.depreciacionMontoInicial;
 	}
 
-	public void setDepreciacionMontoInicial(int depreciacionMontoInicial) {
+	public void setDepreciacionMontoInicial(BigDecimal depreciacionMontoInicial) {
 		this.depreciacionMontoInicial = depreciacionMontoInicial;
 	}
 
-	public int getDepreciacionMontoRestante() {
+	public BigDecimal getDepreciacionMontoRestante() {
 		return this.depreciacionMontoRestante;
 	}
 
-	public void setDepreciacionMontoRestante(int depreciacionMontoRestante) {
+	public void setDepreciacionMontoRestante(BigDecimal depreciacionMontoRestante) {
 		this.depreciacionMontoRestante = depreciacionMontoRestante;
 	}
 

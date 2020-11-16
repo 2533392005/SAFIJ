@@ -19,20 +19,19 @@ public class PersonalContactos implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="contactos_id", unique=true, nullable=false)
-	private int contactosId;
+	@Column(name="contactos_id")
+	private String contactosId;
 
-	@Column(name="contacto_telefono_fijo", length=100)
+	@Column(name="contacto_telefono_fijo")
 	private String contactoTelefonoFijo;
 
-	@Column(name="contacto_telefono_movil", length=100)
+	@Column(name="contacto_telefono_movil")
 	private String contactoTelefonoMovil;
 
-	@Column(name="contactos_direccion", length=300)
+	@Column(name="contactos_direccion")
 	private String contactosDireccion;
 
-	@Column(name="contactos_estado", nullable=false)
+	@Column(name="contactos_estado")
 	private int contactosEstado;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -43,14 +42,14 @@ public class PersonalContactos implements Serializable {
 	@Column(name="contactos_fecha_modifica")
 	private Date contactosFechaModifica;
 
-	@Column(name="contactos_nombre", length=300)
+	@Column(name="contactos_nombre")
 	private String contactosNombre;
 
 	@Column(name="contactos_usuario_crea")
-	private int contactosUsuarioCrea;
+	private String contactosUsuarioCrea;
 
 	@Column(name="contactos_usuario_modifica")
-	private int contactosUsuarioModifica;
+	private String contactosUsuarioModifica;
 
 	//bi-directional many-to-one association to Parentesco
 	@ManyToOne
@@ -65,11 +64,11 @@ public class PersonalContactos implements Serializable {
 	public PersonalContactos() {
 	}
 
-	public int getContactosId() {
+	public String getContactosId() {
 		return this.contactosId;
 	}
 
-	public void setContactosId(int contactosId) {
+	public void setContactosId(String contactosId) {
 		this.contactosId = contactosId;
 	}
 
@@ -129,19 +128,19 @@ public class PersonalContactos implements Serializable {
 		this.contactosNombre = contactosNombre;
 	}
 
-	public int getContactosUsuarioCrea() {
+	public String getContactosUsuarioCrea() {
 		return this.contactosUsuarioCrea;
 	}
 
-	public void setContactosUsuarioCrea(int contactosUsuarioCrea) {
+	public void setContactosUsuarioCrea(String contactosUsuarioCrea) {
 		this.contactosUsuarioCrea = contactosUsuarioCrea;
 	}
 
-	public int getContactosUsuarioModifica() {
+	public String getContactosUsuarioModifica() {
 		return this.contactosUsuarioModifica;
 	}
 
-	public void setContactosUsuarioModifica(int contactosUsuarioModifica) {
+	public void setContactosUsuarioModifica(String contactosUsuarioModifica) {
 		this.contactosUsuarioModifica = contactosUsuarioModifica;
 	}
 
